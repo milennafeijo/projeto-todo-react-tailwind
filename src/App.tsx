@@ -26,6 +26,19 @@ function App() {
                 </li>
               ))}
             </ul>
+
+            <div className="flex justify-between items-center p-6">
+              <p>{todos.length} items total</p>
+
+              <div className="flex gap-4">
+                <button className="text-[#9c9a9a] hover:text-white cursor-pointer">All</button>
+                <button className="text-[#9c9a9a] hover:text-white cursor-pointer">Active</button>
+                <button className="text-[#9c9a9a] hover:text-white cursor-pointer">Completed</button>
+              </div>
+
+              <button className="cursor-pointer">Clear Selected</button>
+            </div>
+
           </div>
 
 
