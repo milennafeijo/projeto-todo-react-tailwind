@@ -2,7 +2,8 @@ import TodoHeader from "./components/TodoHeader";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
-function App() {
+function App() { 
+
   return (
     <main className="bg-navy-950 h-screen">
       <div className="bg-[url('/images/bg-desktop-dark.jpg')] h-80 bg-cover bg-center">
