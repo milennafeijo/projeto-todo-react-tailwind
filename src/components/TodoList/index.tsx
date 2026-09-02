@@ -27,7 +27,7 @@ const TodoList = () => {
                 ))}
             </ul>
 
-            <div className="flex justify-between items-center p-6">
+            <div className="text-sm flex justify-between items-center p-6">
                 <p className={themeConfig[theme].todo.textColor + " cursor-pointer"}>{todos.length} items total</p>
 
                 <div className="flex gap-4">
@@ -36,7 +36,7 @@ const TodoList = () => {
                     <button className={themeConfig[theme].todo.textColor + " cursor-pointer"}>Completed</button>
                 </div>
 
-                <button className={themeConfig[theme].todo.textColor + " cursor-pointer"}>Clear Selected</button>
+                <button className={themeConfig[theme].todo.textColor + " cursor-pointer"}>Clear Completed</button>
             </div>
 
         </div>

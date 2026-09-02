@@ -20,7 +20,7 @@
     --color-bright-blue: hsl(220 98% 61%);
 
     --color-gray-50: hsl(0 0% 98%);
-    --color-gray-300: hsl(233 11% 84%);
+    --color-gray-300: hsl(0 0% 94);
     --color-gray-600: hsl(236 9% 61%);
 
     --color-purple-100: hsl(236 33% 92%);
@@ -42,4 +42,14 @@
 
 body {
     font-family: var(--font-primary);
+}
+
+@layer base {
+    .theme-light{
+        @apply bg-[url('/images/bg-desktop-light.jpg')] bg-no-repeat bg-cover bg-center h-80;
+    }
+
+    .theme-dark{
+        @apply bg-[url('/images/bg-desktop-dark.jpg')] bg-no-repeat bg-cover bg-center h-80;
+    }
 }

@@ -5,7 +5,8 @@ export const themeConfig = {
     light: {
         name: 'light',
         layout: {
-            backgroundColor: 'bg-gray-600',
+            heroClass: 'theme-light',
+            backgroundColor: 'bg-gray-300',
             textColor: 'text-purple-600',
         },
         todo: {
@@ -14,12 +15,13 @@ export const themeConfig = {
             borderColorList: 'border-purple-300',
             textColor: 'text-navy-950'
         },
-        icon: IconSun,
+        icon: IconMoon,
     },
 
     dark: {
         name: 'dark',
         layout: {
+            heroClass: 'theme-dark',
             backgroundColor: 'bg-navy-950',
             textColor: 'text-[#9c9a9a]',
         },
@@ -29,7 +31,7 @@ export const themeConfig = {
             borderColorList: 'border-purple-800',
             textColor: 'text-[#9c9a9a]'
         },
-        icon: IconMoon
+        icon: IconSun
     },
 }
 
