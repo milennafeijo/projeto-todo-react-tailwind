@@ -18,7 +18,7 @@ const TodoList = () => {
         <div className={themeConfig[theme].todo.backgroundColor + " rounded-md"}>
             <ul>
                 {todos.map((todo) => (
-                    <li className="border-b border-purple-700 p-6" key={todo.id}>
+                    <li className={`border-b ${themeConfig[theme].todo.borderColorList} p-6`} key={todo.id}>
                         <div className="flex items-center gap-5">
                             <button className="w-6 h-6 border border-navy-850 rounded-full cursor-pointer"></button>
                             <p className={themeConfig[theme].todo.textColor}>{todo.text}</p>

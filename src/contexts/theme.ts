@@ -11,6 +11,7 @@ export const themeConfig = {
         todo: {
             backgroundColor: 'bg-gray-50',
             borderColor: 'border-navy-950',
+            borderColorList: 'border-purple-300',
             textColor: 'text-navy-950'
         },
         icon: IconSun,
@@ -25,6 +26,7 @@ export const themeConfig = {
         todo: {
             backgroundColor: 'bg-navy-900',
             borderColor: 'border-purple-700',
+            borderColorList: 'border-purple-800',
             textColor: 'text-[#9c9a9a]'
         },
         icon: IconMoon
