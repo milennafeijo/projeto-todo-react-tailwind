@@ -29,9 +29,9 @@ const TodoList = () => {
                 </ul>
 
                 <div className="text-sm flex justify-between items-center p-6">
-                    <p className={themeConfig[theme].todo.textColor + " cursor-pointer"}>{todos.length} items total</p>
+                    <p className={themeConfig[theme].todo.textColor}>{todos.length} items total</p>
 
-                    <div className="hidden sm:flex gap-4">
+                    <div className="hidden md:flex gap-4">
                         <button className="text-bright-blue cursor-pointer">All</button>
                         <button className={themeConfig[theme].todo.textColor + " cursor-pointer"}>Active</button>
                         <button className={themeConfig[theme].todo.textColor + " cursor-pointer"}>Completed</button>
@@ -44,12 +44,11 @@ const TodoList = () => {
 
             </div>
 
-            <div className={themeConfig[theme].todo.backgroundColor + " rounded-md flex justify-center gap-4 p-4 mt-6 sm:hidden"}>
+            <div className={themeConfig[theme].todo.backgroundColor + " rounded-md flex justify-center gap-4 p-4 mt-6 md:hidden"}>
                 <button className="text-bright-blue cursor-pointer">All</button>
                 <button className={themeConfig[theme].todo.textColor + " cursor-pointer"}>Active</button>
                 <button className={themeConfig[theme].todo.textColor + " cursor-pointer"}>Completed</button>
             </div>
-
         </>
 
     )
