@@ -11,7 +11,7 @@ export const themeConfig = {
         },
         todo: {
             backgroundColor: 'bg-gray-50',
-            borderColor: 'border-navy-950',
+            borderColor: 'border-purple-300',
             borderColorList: 'border-purple-300',
             textColor: 'text-navy-950'
         },

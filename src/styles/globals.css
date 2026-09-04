@@ -44,6 +44,7 @@ body {
     font-family: var(--font-primary);
 }
 
+
 @layer base {
     .theme-light{
         @apply bg-[url('/images/bg-desktop-light.jpg')] bg-no-repeat bg-cover bg-center h-80;
@@ -53,3 +54,4 @@ body {
         @apply bg-[url('/images/bg-desktop-dark.jpg')] bg-no-repeat bg-cover bg-center h-80;
     }
 }
+

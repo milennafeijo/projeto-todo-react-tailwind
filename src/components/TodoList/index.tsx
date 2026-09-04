@@ -19,9 +19,11 @@ const TodoList = () => {
 
                 <ul>
                     {todos.map((todo) => (
-                        <li className={`border-b ${themeConfig[theme].todo.borderColorList} p-6`} key={todo.id}>
+                        <li className={`border-b ${themeConfig[theme].todo.borderColorList} p-6 cursor-pointer`} key={todo.id}>
                             <div className="flex items-center gap-5">
-                                <button className="w-6 h-6 border border-navy-850 rounded-full cursor-pointer"></button>
+                                <span className="w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] flex justify-center items-center hover:p-px">
+                                    <button className={themeConfig[theme].todo.borderColor + " " + themeConfig[theme].todo.backgroundColor + " w-full h-full border border-navy-850 rounded-full cursor-pointer"}></button>
+                                </span>
                                 <p className={themeConfig[theme].todo.textColor}>{todo.text}</p>
                             </div>
                         </li>
@@ -32,12 +34,12 @@ const TodoList = () => {
                     <p className={themeConfig[theme].todo.textColor}>{todos.length} items total</p>
 
                     <div className="hidden md:flex gap-4">
-                        <button className="text-bright-blue cursor-pointer">All</button>
-                        <button className={themeConfig[theme].todo.textColor + " cursor-pointer"}>Active</button>
-                        <button className={themeConfig[theme].todo.textColor + " cursor-pointer"}>Completed</button>
+                        <button className="text-bright-blue cursor-pointer hover:underline">All</button>
+                        <button className={themeConfig[theme].todo.textColor + " cursor-pointer hover:underline"}>Active</button>
+                        <button className={themeConfig[theme].todo.textColor + " cursor-pointer hover:underline"}>Completed</button>
                     </div>
 
-                    <button className={themeConfig[theme].todo.textColor + " cursor-pointer"}>Clear Completed</button>
+                    <button className={themeConfig[theme].todo.textColor + " cursor-pointer hover:underline"}>Clear Completed</button>
                 </div>
 
 
@@ -45,9 +47,9 @@ const TodoList = () => {
             </div>
 
             <div className={themeConfig[theme].todo.backgroundColor + " rounded-md flex justify-center gap-4 p-4 mt-6 md:hidden"}>
-                <button className="text-bright-blue cursor-pointer">All</button>
-                <button className={themeConfig[theme].todo.textColor + " cursor-pointer"}>Active</button>
-                <button className={themeConfig[theme].todo.textColor + " cursor-pointer"}>Completed</button>
+                <button className="text-bright-blue cursor-pointer hover:underline">All</button>
+                <button className={themeConfig[theme].todo.textColor + " cursor-pointer hover:underline"}>Active</button>
+                <button className={themeConfig[theme].todo.textColor + " cursor-pointer hover:underline"}>Completed</button>
             </div>
         </>
 
