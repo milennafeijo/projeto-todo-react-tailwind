@@ -14,11 +14,11 @@ export const TodoContainer = ({children}: TodoContainerProps) => {
 
     return (
 
-        <main className={`h-screen ${themeConfig[theme].layout.backgroundColor}`}>
-            <div className={`${themeConfig[theme].layout.heroClass} h-80 b-cover bg-center`}>
-                <div className="max-w-175 m-auto mb-6 px-6"> 
-                    {children}
-                </div>
+        <main className={`relative min-h-screen ${themeConfig[theme].layout.backgroundColor}`}>
+            <div className={`${themeConfig[theme].layout.heroClass} absolute inset-x-0 top-0 h-80 bg-center`}>
+            </div>
+            <div className="relative max-w-175 m-auto pb-6 px-6">
+                {children}
             </div>
         </main>
 
