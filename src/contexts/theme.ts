@@ -13,7 +13,8 @@ export const themeConfig = {
             backgroundColor: 'bg-gray-50',
             borderColor: 'border-purple-300',
             borderColorList: 'border-purple-300',
-            textColor: 'text-navy-950'
+            textColor: 'text-navy-950',
+            hoverTextColor: 'hover:text-navy-850'
         },
         icon: IconMoon,
     },
@@ -29,7 +30,8 @@ export const themeConfig = {
             backgroundColor: 'bg-navy-900',
             borderColor: 'border-purple-700',
             borderColorList: 'border-purple-800',
-            textColor: 'text-[#9c9a9a]'
+            textColor: 'text-[#9c9a9a]',
+            hoverTextColor: 'hover:text-purple-300'
         },
         icon: IconSun
     },
