@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import TodoHeader from "./components/TodoHeader";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
@@ -14,8 +14,23 @@ interface Todo {
 
 function App() {
 
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState<Todo[]>(() => {
+    const savedTodos = localStorage.getItem("todos");
+
+    if (!savedTodos) return [];
+
+    try {
+      const parsedTodos = JSON.parse(savedTodos);
+      return Array.isArray(parsedTodos) ? parsedTodos : [];
+    } catch {
+      return [];
+    }
+  });
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -31,6 +46,7 @@ function App() {
       completed: false
     }]);
 
+    setFilter("all");
     event.currentTarget.reset();
   };
 
@@ -57,12 +73,16 @@ function App() {
     return true; 
   }) 
 
+  const clearCompleted = () => {
+    setTodos(prev => prev.filter(todo => !todo.completed));
+  };
 
   return (
     <TodoContainer>
       <TodoHeader></TodoHeader>
       <TodoForm onSubmit={addTodo}></TodoForm>
-      <TodoList todos={filteredTodos} toggleTodoCompleted={toggleTodoCompleted} setFilter={setFilter} filter={filter}></TodoList>
+      <TodoList todos={filteredTodos} toggleTodoCompleted={toggleTodoCompleted} setFilter={setFilter} filter={filter} clearCompleted={clearCompleted}>
+      </TodoList>
     </TodoContainer>
 
   );

@@ -7,10 +7,19 @@ interface ThemeProviderProps {
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
-    const [theme, setTheme] = useState<ThemeName>("dark");
+    const [theme, setTheme] = useState<ThemeName>(() => {
+        const savedTheme = localStorage.getItem("theme");
+
+        return savedTheme === "light" || savedTheme === "dark" ? savedTheme : "dark";
+    });
 
     const toggleTheme = () => {
-        setTheme(prev => (prev === "dark" ? "light" : "dark"));
+        setTheme(prev => {
+            const nextTheme = prev === "dark" ? "light" : "dark";
+
+            localStorage.setItem("theme", nextTheme);
+            return nextTheme;
+        });
     }
 
     return (

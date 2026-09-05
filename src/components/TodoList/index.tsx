@@ -14,9 +14,10 @@ interface TodoListProps {
     toggleTodoCompleted: (id: number) => void;
     setFilter: (filter: "all" | "active" | "completed") => void;
     filter: "all" | "active" | "completed";
+    clearCompleted: () => void;
 }
 
-const TodoList = ({ todos, toggleTodoCompleted, setFilter, filter }: TodoListProps) => {
+const TodoList = ({ todos, toggleTodoCompleted, setFilter, filter, clearCompleted }: TodoListProps) => {
 
     const { theme } = useContext(ThemeContext);
 
@@ -44,23 +45,22 @@ const TodoList = ({ todos, toggleTodoCompleted, setFilter, filter }: TodoListPro
                     ))}
                 </ul>
 
-                {todos.length > 0 && (
+                <div className="text-sm flex justify-between items-center p-6">
+                    <p className={themeConfig[theme].todo.textColor}>{todos.length} items total</p>
 
-                    <div className="text-sm flex justify-between items-center p-6">
-                        <p className={themeConfig[theme].todo.textColor}>{todos.length} items total</p>
+                    <div className="hidden md:flex gap-4">
+                        <button onClick={() => setFilter("all")} className={`${filter === "all" ? "text-bright-blue" : themeConfig[theme].todo.textColor} cursor-pointer ${themeConfig[theme].todo.hoverTextColor}`}>All</button>
 
-                        <div className="hidden md:flex gap-4">
-                            <button onClick={() => setFilter("all")} className="text-bright-blue cursor-pointer">All</button>
+                        <button onClick={() => setFilter("active")} className={`${filter === "active" ? "text-bright-blue" : themeConfig[theme].todo.textColor} cursor-pointer ${themeConfig[theme].todo.hoverTextColor}`}>Active</button>
 
-                            <button onClick={() => setFilter("active")} className={themeConfig[theme].todo.textColor + " cursor-pointer hover:underline"}>Active</button>
-
-                            <button onClick={() => setFilter("completed")} className={themeConfig[theme].todo.textColor + " cursor-pointer hover:underline"}>Completed</button>
-                        </div>
-
-                        <button className={themeConfig[theme].todo.textColor + " cursor-pointer hover:underline"}>Clear Completed</button>
+                        <button onClick={() => setFilter("completed")} className={`${filter === "completed" ? "text-bright-blue" : themeConfig[theme].todo.textColor} cursor-pointer ${themeConfig[theme].todo.hoverTextColor}`}>Completed</button>
                     </div>
 
-                )}
+                    <button 
+                    onClick={clearCompleted}
+                    className={`${themeConfig[theme].todo.textColor} cursor-pointer ${themeConfig[theme].todo.hoverTextColor}`}>Clear Completed</button>
+                </div>
+
 
             </div>
 
