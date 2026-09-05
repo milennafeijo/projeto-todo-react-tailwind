@@ -56,9 +56,9 @@ const TodoList = ({ todos, toggleTodoCompleted, setFilter, filter, clearComplete
                         <button onClick={() => setFilter("completed")} className={`${filter === "completed" ? "text-bright-blue" : themeConfig[theme].todo.textColor} cursor-pointer ${themeConfig[theme].todo.hoverTextColor}`}>Completed</button>
                     </div>
 
-                    <button 
-                    onClick={clearCompleted}
-                    className={`${themeConfig[theme].todo.textColor} cursor-pointer ${themeConfig[theme].todo.hoverTextColor}`}>Clear Completed</button>
+                    <button
+                        onClick={clearCompleted}
+                        className={`${themeConfig[theme].todo.textColor} cursor-pointer ${themeConfig[theme].todo.hoverTextColor}`}>Clear Completed</button>
                 </div>
 
 
