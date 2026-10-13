@@ -1,75 +1,105 @@
-# React + TypeScript + Vite
+# Projeto Todo React + Tailwind do curso Dev Quest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação de lista de tarefas desenvolvida com React, TypeScript e Tailwind CSS, com suporte a tema claro/escuro e persistência das tarefas no localStorage.
 
-Currently, two official plugins are available:
+<img src="./public/images/projeto-read-me.png" width="50%"><img src="./public/images/projeto-read-me-escuro.png" width="50%">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionalidades
 
-## React Compiler
+- Adicionar novas tarefas
+- Marcar tarefas como concluídas
+- Filtrar por:
+  - Todas
+  - Ativas
+  - Concluídas
+- Limpar tarefas concluídas
+- Alternar entre tema claro e escuro
+- Persistência dos dados no navegador
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- LocalStorage
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Pré-requisitos
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Antes de começar, certifique-se de ter instalado:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js 18+
+- npm ou yarn
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Instalação
 
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/milennafeijo/projeto-todo-react-tailwind.git
+cd seu-repositorio
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+2. Instale as dependências:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
+
+## Scripts disponíveis
+
+No diretório do projeto, você pode executar:
+
+```bash
+npm run dev
+```
+
+Inicia o servidor de desenvolvimento do Vite.
+
+```bash
+npm run build
+```
+
+Gera a build de produção do projeto.
+
+```bash
+npm run preview
+```
+
+Previsualiza a build gerada localmente.
+
+```bash
+npm run lint
+```
+
+Executa a análise de lint do projeto.
+
+## Estrutura do projeto
+
+```text
+src/
+├── components/
+│   ├── TodoContainer/
+│   ├── TodoForm/
+│   ├── TodoHeader/
+│   └── TodoList/
+├── contexts/
+│   ├── ThemeContext.ts
+│   ├── ThemeProvider.tsx
+│   └── theme.ts
+├── hooks/
+│   └── useTodo.ts
+├── styles/
+│   └── globals.css
+├── App.tsx
+├── main.tsx
+└── ...
+```
+
+## Observações
+
+- As tarefas são salvas automaticamente no `localStorage` do navegador.
+- O tema é controlado por um contexto React e muda o visual do app em tempo real.
+- A aplicação segue o padrão de uma todo app moderna e responsiva.
+
+
